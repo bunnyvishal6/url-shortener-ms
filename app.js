@@ -2,7 +2,7 @@ var http = require("http");
 var fs = require("fs");
 var url = require("url");
 var mongo = require("mongodb").MongoClient;
-
+var mongodbUrl = "mongodb://bunny:9642766314I@ds017584.mlab.com:17584/short-urls";
 
 
 
@@ -43,7 +43,7 @@ http.createServer(function (request, response) { /*http server!*/
     } else if (input.substring(0, 3) == 'new' || input.substring(0, 4) == "new/") { /*If the user wanna make a url shorten*/
         input = input.substring(4, input.length);
         if (checkInput(input) === true) { /*Check if the url is in valid format*/
-            mongo.connect('mongodb://127.0.0.1/short-urls', function (err, db) { /*Connecting to mongodb*/
+            mongo.connect(mongodbUrl, function (err, db) { /*Connecting to mongodb*/
                 if (err) {
                     console.error(err);
                     db.close(); /*Don't forget to close the db*/
@@ -60,7 +60,7 @@ http.createServer(function (request, response) { /*http server!*/
                                     db.collection('urls').insert({ "url": input, "short": number, "short-url": shorturl }); /*Insert the url into the collection*/
                                     db.collection('urls').find({ "short": number }).toArray(function (errOne, dataOne) { /*Now make a query to database and serve the Json to the user*/
                                         if (errOne) {
-                                            console.log(errOne)
+                                            console.log(errOne);
                                         } else {
                                             response.writeHead(200, { "Content-Type": "text/json" });
                                             response.end(JSON.stringify({
@@ -98,7 +98,7 @@ http.createServer(function (request, response) { /*http server!*/
             }));
         }
     } else if(typeof Number(input) === "number"){ /*Check whether the short url entered by user is a number*/
-        mongo.connect('mongodb://127.0.0.1/short-urls', function (err, db) { /*If its a valid number make a connection to the database*/
+        mongo.connect(mongodbUrl, function (err, db) { /*If its a valid number make a connection to the database*/
            if(err){
                console.error(err);
            } else {
