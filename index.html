@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>URL Shortner Microservice</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div style="text-align:center;margin:auto;color:#24B76D">
+            <h1>Url Shortner Microservice</h1>
+        </div>
+        <div style="margin:5% auto; text-align:center">
+            <h3>This is a simple site that shortens the url passed by the user</h3>
+            <h4>Write '/new/' (without the double quotes) and the url for which you want the short form, after the present url in address bar and press enter.
+                Then you will get Json response. Then if you visit the output url in the Json response you will be redirected
+                to original url</h4>
+        </div>
+        <div>
+            <h3 style="color:#8E40DD">Examples:</h3>
+            <h4>1. <span style="color:#E66060">Input:</span> https://bunny-url-ms.herokuapp.com/new/https://www.google.com</h4>
+            <h4><span style="color:#E66060">Output: </span>
+                <h4>{</h4>
+                <h4>input_url: https://bunny-url-ms.herokuapp.com/new/https://www.google.com , </h4>
+                <h4>output_url: https://bunny-url-ms.herokuapp.com/45214 </h4>
+                <h4> } </h4>
+
+                <hr />
+
+                <h4>2. <span style="color:#E66060">Input:</span> https://bunny-url-ms.herokuapp.com/new/https://www.facebook.com:80</h4>
+                <h4><span style="color:#E66060">Output: </span>
+                <h4>{</h4>
+                <h4>input_url: https://bunny-url-ms.herokuapp.com/new/https://www.facebook.com:80 , </h4>
+                <h4>output_url: https://bunny-url-ms.herokuapp.com/45214 </h4>
+                <h4> } </h4>
+        </div>
+    </div>
+    <div class="container">
+        <div style="margin:10% auto auto auto;text-align:center">
+            <h4>Coded By:<a href="https://www.bunnyvishal.com" target="_blank">Bunny Vishal</a></h4>
+        </div>
+    </div>
+</body>
+
+</html>

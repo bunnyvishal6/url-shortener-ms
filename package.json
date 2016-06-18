@@ -1,0 +1,33 @@
+ {
+    "name": "url-shortener-ms",
+    "version": "1.0.0",
+    "description": "This is simple Nodejs server that ouputs the short-urls for the urls given by the user as input",
+    "main": "app.js",
+    "repository": {
+        "type": "git",
+        "url":"git+https://github.com/bunnyvishal6/url-shortener-ms"
+    },
+    "author": "Bunny Vishal",
+    "homepage": "https://www.bunnyvishal.com",
+    "keywords": [
+        "full stack",
+        "Node",
+        "javascript",
+        "url",
+        "shortner",
+        "microservice"
+    ],
+    "scripts": {
+        "start": "node app.js"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": "4.4.5",
+        "npm": "3.9.5"
+    },
+    "dependencies": {
+        "express": "^4.13.4",
+        "mongodb": "^2.6.12"
+    }
+    
+}
